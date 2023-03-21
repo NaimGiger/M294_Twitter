@@ -12,8 +12,8 @@ const tweets = ref([])
 const { isLoggedIn } = useAuth()
 
 onMounted(async () => {
-    // const response = await checkAuth()
-    // console.log('checkAuth Resultat', response)
+    const response = await checkAuth()
+    console.log('checkAuth Resultat', response)
 })
 
 function loadStream() {
