@@ -13,7 +13,7 @@ defineProps(['text', 'user', 'createdAt'])
                 <span class="tweet__timestamp">{{ createdAt }}</span>
             </div>
             <div class="tweet__text">
-                {{ text }}
+                {{ text.substr(0, 80) }}
             </div>
         </div>
     </div>
