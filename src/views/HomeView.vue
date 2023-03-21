@@ -27,9 +27,6 @@ function loadStream() {
         } finally {
             loading.value = false
         }
-        setTimeout(() => {
-            loading.value = false
-        }, 3000)
     })
 }
 
@@ -40,7 +37,7 @@ loadStream()
     <LoginInfo v-if="!isLoggedIn" />
     <Composer v-if="isLoggedIn" @posted="loadStream()" />
     <section class="stream" v-if="!loading">
-        <Tweet v-for="tweet in tweets" :user="tweet.user" :text="tweet.text" :created-at="tweet.createdAt" />
+        <Tweet v-for="tweet in tweets" :user="tweet.user" :text="tweet.text" :created-at="tweet.created_at" />
     </section>
     <div class="loading" v-if="loading">
         Lade Tweets...

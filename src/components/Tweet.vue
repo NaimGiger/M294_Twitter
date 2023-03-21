@@ -1,4 +1,6 @@
 <script setup>
+import { formatDistance } from 'date-fns';
+
 defineProps(['text', 'user', 'createdAt'])
 </script>
 
@@ -9,8 +11,12 @@ defineProps(['text', 'user', 'createdAt'])
         </div>
         <div class="tweet__content">
             <div class="tweet__header">
-                <span class="tweet__author">{{ user.name }}</span>
-                <span class="tweet__timestamp">{{ createdAt }}</span>
+                <span class="tweet__author">
+                    {{ user.name }}
+                </span>
+                <span class="tweet__timestamp">
+                    {{ formatDistance(new Date(createdAt), new Date()) }}
+                </span>
             </div>
             <div class="tweet__text">
                 {{ text.substr(0, 80) }}
